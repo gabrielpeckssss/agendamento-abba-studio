@@ -177,24 +177,22 @@ function enviar() {
   if (!ok) return;
 
   var msg = '';
-  msg += '╔══════════════════════╗\n';
-  msg += '        🎙️ *ABBA ESTÚDIO*\n';
-  msg += '     _Novo Agendamento_\n';
-  msg += '╚══════════════════════╝\n';
+  msg += String.fromCodePoint(0x1F3A4) + ' *ABBA EST\u00daDIO*\n';
+  msg += '*Novo Agendamento*\n';
   msg += '\n';
-  msg += '👤 *Nome:* ' + nome + '\n';
-  msg += '📱 *Telefone:* ' + tel + '\n';
-  if (insta) msg += '📸 *Instagram:* @' + insta.replace('@','') + '\n';
+  msg += String.fromCodePoint(0x1F464) + ' *Nome:* ' + nome + '\n';
+  msg += String.fromCodePoint(0x1F4F1) + ' *Telefone:* ' + tel + '\n';
+  if (insta) msg += String.fromCodePoint(0x1F4F8) + ' *Instagram:* @' + insta.replace('@','') + '\n';
   msg += '\n';
-  msg += '📅 *Data:* ' + fmt(data) + ' — ' + diaSemana(data) + '\n';
-  msg += '🕐 *Horário:* ' + horario + '\n';
+  msg += String.fromCodePoint(0x1F4C5) + ' *Data:* ' + fmt(data) + ' \u2014 ' + diaSemana(data) + '\n';
+  msg += String.fromCodePoint(0x1F550) + ' *Hor\u00e1rio:* ' + horario + '\n';
   msg += '\n';
   if (obs) {
-    msg += '📝 *Observações:*\n' + obs + '\n';
+    msg += String.fromCodePoint(0x1F4DD) + ' *Observa\u00e7\u00f5es:*\n' + obs + '\n';
     msg += '\n';
   }
-  msg += '──────────────────────\n';
-  msg += '✅ _Aguardando confirmação_';
+  msg += '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n';
+  msg += String.fromCodePoint(0x2705) + ' _Aguardando confirma\u00e7\u00e3o_';
 
   var url = 'https://wa.me/5511945807217?text=' + encodeURIComponent(msg);
   document.getElementById('form-area').style.display = 'none';
